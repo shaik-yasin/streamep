@@ -40,7 +40,7 @@ input = {
 model = joblib.load('promote_pipeline_model.pkl')
 
 if st.button('Predict'):
-    X_input = pd.DataFrame(input)
+    X_input = pd.DataFrame(input,index=[0])
     prediction = model.predict(X_input)
     st.write("The predicted value is:")
     st.write(prediction)
